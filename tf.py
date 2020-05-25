@@ -2,6 +2,12 @@ import tensorflow as tf
 mnist = tf.keras.datasets.mnist
 
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
+
+(train_num_samples, train_w, train_h) = x_train.shape
+(test_num_samples, test_w, test_h) = x_test.shape
+print(f'Training on {train_num_samples} samples')
+print(f'Testing on {test_num_samples} samples')
+
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
 model = tf.keras.models.Sequential([
