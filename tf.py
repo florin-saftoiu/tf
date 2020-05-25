@@ -8,6 +8,7 @@ mnist = tf.keras.datasets.mnist
 print(f'Training on {train_num_samples} samples')
 print(f'Testing on {test_num_samples} samples')
 
+# normalize inputs
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
 model = tf.keras.models.Sequential([
